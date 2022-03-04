@@ -31,9 +31,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_COLS 5
 
 // wiring of each half
-#define MATRIX_ROW_PINS { F7, B1, B3, B2, B6 }
-// #define MATRIX_COL_PINS { B5, B4, E6, D7, C6 }
-#define MATRIX_COL_PINS { C6, D7, E6, B4, B5 }
+#define MATRIX_COL_PINS { F4, F5, F6, F7, B1 }
+// MATRIX_ROW_PINS
+#define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
 
 #define DIODE_DIRECTION COL2ROW
 

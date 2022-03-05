@@ -30,6 +30,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 10
 #define MATRIX_COLS 5
 
+/* Use I2C or Serial, not both */
+#define USE_SERIAL
+//#define USE_I2C
+
+/* Select hand configuration */
+//#define MASTER_LEFT
+// #define EE_HANDS
 #define MASTER_RIGHT
 
 // wiring of each half

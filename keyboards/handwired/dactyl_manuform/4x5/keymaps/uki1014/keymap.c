@@ -91,9 +91,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+-------------,                             ,-------------+------+------+------,
      *        |      |      |                                                         |      |      |
      *        '------+------'-------------'                             '-------------'------+------'
-     *                      |      |      |                             | CTRL |      |
-     *                      |      |      |                             |  +   | ESC  |
-     *                      |      |      |                             | TAB  |      |
+     *                      | CTRL |      |                             |      |      |
+     *                      |  +   |      |                             |      | ESC  |
+     *                      | TAB  |      |                             |      |      |
      *                      '------+------'                             '------+------'
      *                                    '------+------' '------+------'
      *                                    |      |      | | TAB  |SPACE |
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT, KC_ML,   KC_MD,   KC_MR,        KC_LGUI,                            KC_CIRC, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,
         KC_LALT, KC_VOLD, KC_VOLU, LALT(KC_SPC), KC_LALT,                            KC_MUTE, KC_PERC, KC_HASH, KC_AMPR, KC_TAB,
                  _______, _______,                                                                     _______, _______,
-                                   _______, _______,                                 RCTL(KC_TAB), KC_ESC,
+                                   RCTL(KC_TAB), _______,                            _______, KC_ESC,
                                                  _______, _______,  KC_TAB,   RESET,
                                                  _______, _______,  KC_SPACE, _______
     )

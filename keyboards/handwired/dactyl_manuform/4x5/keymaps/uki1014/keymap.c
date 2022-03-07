@@ -29,16 +29,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------|                             |------|------+------+------+------|
      * |   z  |   x  |   c  |   v  |   b  |                             |   n  |   m  |   ,  |   .  |   '  |
      * |------+------+------+-------------,                             ,-------------+------+------+------,
-     *        | CTRL |LAYER2|                                                         | LANG1| SHIFT|
+     *        | CTRL |LAYER2|                                                         |      | SHIFT|
      *        '------+------'                                                         '------+------'
      *                      |-----|-------|                             |-------|--------|
      *                      |SHIFT| SPACE |                             | ENTER | LAYER1 |
      *                      '-----+-------'                             '-------+--------'
      *                                    '------+------' '------+------'
-     *                                    |  TAB | CMD  | |  BS  | TAB  |
+     *                                    |LAYER3| CMD  | |  BS  | TAB  |
      *                                    '------+------' '------+------'
      *                                    |      |      | | CTRL |      |
-     *                                    |  ALT |LAYER3| |  +   | CTRL |
+     *                                    |  ALT | TAB  | |  +   | CTRL |
      *                                    |      |      | | CMD  |      |
      *                                    '------+------' '------+------'
      */
@@ -46,10 +46,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
         KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,
         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_QUOT,
-                         	KC_LCTL, LAYER2,                                                               KC_LNG1,KC_RSFT,
+                         	KC_LCTL, LAYER2,                                                               _______, KC_RSFT,
                                    KC_LSFT, KC_SPC,                                    KC_ENT,  LAYER1,
-                                                   KC_LGUI, LAYER3,  KC_BSPC, RCTL(KC_RGUI), // + Qするやつ
-                                                   KC_TAB,  KC_LALT, KC_TAB, KC_RCTL
+                                                   KC_LGUI, KC_TAB,  KC_BSPC, RCTL(KC_RGUI), // + Qするやつ
+                                                   LAYER3,  KC_LALT, KC_TAB, KC_RCTL
     ),
 
     /* Layer1
@@ -85,39 +85,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Layer2
      * ,----------------------------------,                             ,----------------------------------,
-     * | F7   | F12  |  mup |mbtn2 | mbtn |                             |WRight| WUp  |  up  | WDown|WLeft |
+     * |      |      |  mup |      |      |                             |WRight| WUp  |  up  | WDown|WLeft |
      * |------+------+------+------+------|                             |-------------+------+------+------|
      * | SHIFT| mleft| mdown|mright| CMD  |                             |  ^   | left | down |right |  $   |
      * |------+------+------+------+------|                             |------|------+------+------+------|
-     * | Alt  | VOL- | VOL+ |Alt+SP| Alt  |                             | MUTE | TAB  |      |      |      |
+     * | Alt  | F7   | F12  |Alt+SP| Alt  |                             |      | TAB  | mbtn | mbtn2|      |
      * |------+------+------+-------------,                             ,-------------+------+------+------,
      *        |      |      |                                                         |      |      |
      *        '------+------'-------------'                             '-------------'------+------'
      *                      |      | CTRL |                             |      |      |
-     *                      |      |  +   |                             |      | ESC  |
+     *                      |      |  +   |                             | LANG1| ESC  |
      *                      |      | TAB  |                             |      |      |
      *                      '------+------'                             '------+------'
      *                                    '------+------' '------+------'
-     *                                    |      |      | |      |      |
+     *                                    |      |      | | LANG2|      |
      *                                    '------+------' '------+------'
      *                                    |      |      | | RESET|      |
      *                                    '------+------' '------+------'
      */
     [_LAYER2] = LAYOUT(
-        KC_F7,   KC_F12,  KC_MU,   KC_MB2,       KC_MB1,                                    KC_WH_R, KC_WH_U, KC_UP,   KC_WH_D, KC_WH_L,
-        KC_LSFT, KC_ML,   KC_MD,   KC_MR,        KC_LGUI,                                   KC_CIRC, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,
-        KC_LALT, KC_VOLD, KC_VOLU, LALT(KC_SPC), KC_LALT,                                   KC_MUTE, KC_TAB,  _______, _______, _______,
+        _______, _______,KC_MU,  _______,      _______,                                   KC_WH_R, KC_WH_U, KC_UP,   KC_WH_D, KC_WH_L,
+        KC_LSFT, KC_ML,  KC_MD,  KC_MR,        KC_LGUI,                                   KC_CIRC, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,
+        KC_LALT, KC_F7,  KC_F12, LALT(KC_SPC), KC_LALT,                                   _______, KC_TAB,  KC_MB1, KC_MB2, _______,
                  _______, _______,                                                                            _______, _______,
-                                   _______, RCTL(KC_TAB),                                   _______, KC_ESC,
-                                                         _______, _______,  _______, RESET,
+                                   _______, RCTL(KC_TAB),                                   KC_LNG1, KC_ESC,
+                                                         _______, _______,  KC_LNG2, RESET,
                                                          _______, _______,  _______, _______
     ),
 
     /* Layer3
      * ,----------------------------------,                             ,----------------------------------,
-     * |      |      |      |      |      |                             |  1   |  2   |  3   |  4   |  5   |
+     * |      | VOL- | MUTE | VOL+ |      |                             |  1   |  2   |  3   |  4   |  5   |
      * |------+------+------+------+------|                             |-------------+------+------+------|
-     * |      |      |      |      |      |                             |  6   |  7   |  8   |  9   |  0   |
+     * |      | Prev | Stop | Next |      |                             |  6   |  7   |  8   |  9   |  0   |
      * |------+------+------+------+------|                             |------|------+------+------+------|
      * |      |      |      |      |      |                             |      |      |      |      |      |
      * |------+------+------+-------------,                             ,-------------+------+------+------,
@@ -134,8 +134,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                    '------+------' '------+------'
      */
     [_LAYER3] = LAYOUT(
-        _______, _______, _______, _______,  _______,                                    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,
-        _______, _______, _______, _______,  _______,                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+        _______, KC_VOLD, KC_MUTE, KC_VOLU,  _______,                                    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,
+        _______, KC_MPRV, KC_MSTP, KC_MNXT,  _______,                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
         _______, _______, _______, _______,  _______,                                    _______, _______, _______, _______, _______,
                  _______, _______,                                                                         _______, _______,
                                    _______, _______,                                     _______, _______,

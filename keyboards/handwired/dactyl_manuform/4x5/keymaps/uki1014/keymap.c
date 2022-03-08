@@ -32,14 +32,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *        | CTRL |LAYER2|                                                         |   /  | SHIFT|
      *        '------+------'                                                         '------+------'
      *                      |-----|-------|                             |-------|--------|
-     *                      |SHIFT| SPACE |                             | ENTER | LAYER1 |
+     *                      | CMD | SPACE |                             | ENTER | LAYER1 |
      *                      '-----+-------'                             '-------+--------'
      *                                    '------+------' '------+------'
-     *                                    |LAYER3| CMD  | |  BS  | TAB  |
+     *                                    |LAYER3|SHIFT | |  BS  | TAB  |
      *                                    '------+------' '------+------'
-     *                                    |      | CTRL | |      |      |
-     *                                    |  ALT |  +   | | LANG1| CTRL |
-     *                                    |      | CMD  | |      |      |
+     *                                    |      |      | |      |      |
+     *                                    |  ALT |      | |      | CTRL |
+     *                                    |      |      | |      |      |
      *                                    '------+------' '------+------'
      */
     [_LAYER0] = LAYOUT(
@@ -47,24 +47,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,
         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_QUOT,
                          	KC_LCTL, LAYER2,                                                               KC_SLSH, KC_RSFT,
-                                   KC_LSFT, KC_SPC,                                    KC_ENT,  LAYER1,
-                                                   KC_LGUI, RCTL(KC_RGUI),   KC_BSPC,  KC_LNG1, // cmd ctrlは+ QしてPC閉じるやつ
-                                                   LAYER3,  KC_LALT, KC_TAB, KC_RCTL
+                                   KC_LGUI, KC_SPC,                                    KC_ENT,  LAYER1,
+                                                   KC_LSFT, _______, KC_BSPC, _______, // cmd ctrlは+ QしてPC閉じるやつ
+                                                   LAYER3,  KC_LALT, _______, KC_RCTL
     ),
 
     /* Layer1
      * ,----------------------------------,                             ,----------------------------------,
-     * |      |      |  \   |  *   |  +   |                             |  <   |  @   |  (   |  )   |  &   |
+     * | CMD+CTRL+Q  |  \   |  *   |  +   |                             |  <   |  @   |  (   |  )   |  &   |
      * |------+------+------+------+------|                             |-------------+------+------+------|
-     * |      |  ^   |  #   |  /   |  -   |                             |  >   |  =   |  {   |  }   |  $   |
+     * | TAB  |  ^   |  #   |  /   |  -   |                             |  >   |  =   |  {   |  }   |  $   |
      * |------+------+------+------+------|                             |------|------+------+------+------|
-     * |      |      |  %   |  |   |  _   |                             |  ~   |  `   |  [   |  ]   |  !   |
+     * |      |      |  _   |  |   |  %   |                             |  ~   |  `   |  [   |  ]   |  !   |
      * |------+------+------+-------------,                             ,-------------+------+------+------,
      *        |      |      |                                                         |      |      |
      *        '------+------'-------------'                             '-------------'------+------'
-     *                      |      |      |                             |      |      |
-     *                      |      |      |                             |      |      |
-     *                      |      |      |                             |      |      |
+     *                      |      |      |                             | CMD  |      |
+     *                      |      |      |                             |  +   |      |
+     *                      |      |      |                             | SPACE|      |
      *                      '------+------'                             '------+------'
      *                                    '------+------' '------+------'
      *                                    |      |      | |      |      |
@@ -73,11 +73,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                    '------+------' '------+------'
      */
     [_LAYER1] = LAYOUT(
-        _______, _______, KC_BSLS, KC_ASTR,  KC_PLUS,                                     KC_LABK, KC_AT,   KC_LPRN, KC_RPRN, KC_AMPR,
-        _______, KC_CIRC, KC_HASH, KC_SLSH,  KC_MINS,                                     KC_RABK, KC_PEQL, KC_LCBR, KC_RCBR, KC_DLR,
+        _______, RCTL(KC_RGUI), KC_BSLS, KC_ASTR,  KC_PLUS,                                     KC_LABK, KC_AT,   KC_LPRN, KC_RPRN, KC_AMPR,
+        KC_TAB,  KC_CIRC, KC_HASH, KC_SLSH,  KC_MINS,                                     KC_RABK, KC_PEQL, KC_LCBR, KC_RCBR, KC_DLR,
         _______, _______, KC_PERC, KC_PIPE,  KC_UNDS,                                     KC_TILD, KC_GRV,  KC_LBRC, KC_RBRC, KC_EXLM,
                  _______, _______,                                                                          _______, _______,
-                                   _______, _______,                                      _______, _______,
+                                   _______, _______,                                      RGUI(KC_SPC), _______,
                                                      _______, _______,  _______, _______,
                                                      _______, _______,  _______, _______
 
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,----------------------------------,                             ,----------------------------------,
      * |      | VOL- | MUTE | VOL+ |      |                             |  1   |  2   |  3   |  4   |  5   |
      * |------+------+------+------+------|                             |-------------+------+------+------|
-     * |      | Prev | Pause| Next |      |                             |  6   |  7   |  8   |  9   |  0   |
+     * |CMDSHI| Prev | Pause| Next |      |                             |  6   |  7   |  8   |  9   |  0   |
      * |------+------+------+------+------|                             |------|------+------+------+------|
      * |      |      |      |      |      |                             |      |      |      |      |      |
      * |------+------+------+-------------,                             ,-------------+------+------+------,
@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_LAYER3] = LAYOUT(
         _______, KC_VOLD, KC_MUTE, KC_VOLU,  _______,                                    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,
-        _______, KC_MPRV, KC_MPLY, KC_MNXT,  _______,                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+        LGUI(KC_LSFT), KC_MPRV, KC_MPLY, KC_MNXT,  _______,                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
         _______, _______, _______, _______,  _______,                                    _______, _______, _______, _______, _______,
                  _______, _______,                                                                         _______, _______,
                                    _______, _______,                                     _______, _______,

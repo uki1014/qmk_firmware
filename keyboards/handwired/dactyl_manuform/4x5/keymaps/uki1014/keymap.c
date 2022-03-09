@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                      |      |      |                             | SPACE|      |
      *                      '------+------'                             '------+------'
      *                                    '------+------' '------+------'
-     *                                    |      |      | | LANG2|      |
+     *                                    |      |      | | LANG1|      |
      *                                    '------+------' '------+------'
      *                                    |      |      | | RESET|      |
      *                                    '------+------' '------+------'
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LALT, KC_F7,  KC_F12, LALT(KC_SPC), KC_LALT,                                   _______, KC_TAB,  KC_MB2,  KC_MB1,  RCTL(KC_TAB),
                  _______, _______,                                                                          _______, _______,
                                  _______, _______,                                   RGUI(KC_SPC), KC_ESC,
-                                                         _______, _______,  KC_LNG2, RESET,
+                                                         _______, _______,  KC_LNG1, RESET,
                                                          _______, _______,  _______, _______
     ),
 

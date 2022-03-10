@@ -93,12 +93,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+-------------,                             ,-------------+------+------+------,
      *        |      |      |                                                         |      |      |
      *        '------+------'-------------'                             '-------------'------+------'
-     *                      |      |      |                             | CMD  |      |
-     *                      |      |      |                             |  +   | ESC  |
-     *                      |      |      |                             | SPACE|      |
+     *                      |      |      |                             |      |      |
+     *                      |      |      |                             |LANG1 | ESC  |
+     *                      |      |      |                             |      |      |
      *                      '------+------'                             '------+------'
      *                                    '------+------' '------+------'
-     *                                    |      |      | | LANG1|      |
+     *                                    |      |      | |CMD+SP|      |
      *                                    '------+------' '------+------'
      *                                    |      |      | | RESET|      |
      *                                    '------+------' '------+------'
@@ -108,8 +108,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT, KC_ML,  KC_MD,  KC_MR,        KC_LGUI,                                   KC_CIRC, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,
         KC_LALT, KC_F7,  KC_F12, LALT(KC_SPC), KC_LALT,                                   _______, KC_TAB,  KC_MB2,  KC_MB1,  RCTL(KC_TAB),
                  _______, _______,                                                                          _______, _______,
-                                 _______, _______,                                   RGUI(KC_SPC), KC_ESC,
-                                                         _______, _______,  KC_LNG1, RESET,
+                                 _______, _______,                                   KC_LNG1, KC_ESC,
+                                                         _______, _______,  RGUI(KC_SPC), RESET,
                                                          _______, _______,  _______, _______
     ),
 

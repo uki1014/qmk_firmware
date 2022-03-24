@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------|                             |-------------+------+------+------|
      * | SHIFT| mleft| mdown|mright| CMD  |                             |  ^   | left | down |right |  $   |
      * |------+------+------+------+------|                             |------|------+------+------+------|
-     * | Alt  | F7   | F12  |Alt+SP| Alt  |                             |LANG2 | TAB  | mbtn2| mbtn |CTR+TB|
+     * |Ctr+Al| F7   | F12  |Alt+SP| Alt  |                             |LANG2 | TAB  | mbtn2| mbtn |CTR+TB|
      * |------+------+------+-------------,                             ,-------------+------+------+------,
      *        |      |      |                                                         |      |      |
      *        '------+------'-------------'                             '-------------'------+------'
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_LAYER2] = LAYOUT(
         KC_PGDN, KC_PGUP,KC_MU,  KC_HOME,      KC_END,                                    KC_WH_R, KC_WH_U, KC_UP,   KC_WH_D, KC_WH_L,
         KC_LSFT, KC_ML,  KC_MD,  KC_MR,        KC_LGUI,                                   KC_CIRC, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,
-        KC_LALT, KC_F7,  KC_F12, LALT(KC_SPC), KC_LALT,                                   KC_LNG2, KC_TAB,  KC_MB2,  KC_MB1,  RCTL(KC_TAB),
+        LALT(KC_LCTL), KC_F7,  KC_F12, LALT(KC_SPC), KC_LALT,                                   KC_LNG2, KC_TAB,  KC_MB2,  KC_MB1,  RCTL(KC_TAB),
                  _______, _______,                                                                          _______, _______,
                                  _______, _______,                                   KC_LNG1, KC_ESC,
                                                          _______, _______,  KC_DEL,  RESET,
